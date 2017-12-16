@@ -1,0 +1,70 @@
+.products-container .product-cart:nth-child(odd) {
+    margin-right: 35px;
+}
+
+.product-cart {
+    display: inline-block;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+
+.product-title, .product-price {
+    text-align: center;
+}
+
+.btn-subtract, .btn-plus {
+    border-radius: 5px;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 25px;
+    display: inline-block;
+}
+
+.btn-subtract {
+    border: 1px solid red;
+    color: red;
+    float: left;
+}
+
+.btn-subtract:hover {
+    color:#ffffff;
+    background-color: red;
+}
+
+.btn-plus {
+    border: 1px solid green;
+    color: green;
+    float: right;
+}
+
+.btn-plus:hover {
+    color:#ffffff;
+    background-color: green;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 479px) {
+    .product-cart {
+        border: 1px solid #e8e8e8;
+        width: 150px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    
+    
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    
+}

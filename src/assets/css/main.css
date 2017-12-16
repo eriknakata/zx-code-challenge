@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+}
+
+body,input,textarea,button,select, span {
+    font-size: 15px;
+    font-family: "HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #333;
+    line-height: 1.6
+}

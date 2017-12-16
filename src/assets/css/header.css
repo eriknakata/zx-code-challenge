@@ -1,0 +1,46 @@
+.zx-header {
+    border-top: 5px solid;
+    padding: 10px 10px 0px 10px;
+}
+
+.box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.box-cart {
+    background-image: url(../images/icon-cart.png);
+    background-repeat: no-repeat;
+    padding-left: 28px;
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 479px) {
+
+    .zx-header {
+        height: 80px;
+    }
+
+    .img-logo {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+    
+    
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+    
+}
