@@ -1,35 +1,48 @@
-.products-container .product-cart:nth-child(odd) {
-    margin-right: 35px;
-}
-
-.product-cart {
-    display: inline-block;
+.product-card {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
     vertical-align: top;
+    padding: 0px 5px 10px 5px;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
 }
 
 .product-title, .product-price {
     text-align: center;
 }
 
-.btn-subtract, .btn-plus {
+.product-price {
+    margin-bottom: 10px;
+}
+
+.product-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.product-buttons div {
     border-radius: 5px;
-    height: 35px;
-    width: 35px;
-    line-height: 35px;
+    height: 30px;
+    line-height: 25px;
     text-align: center;
     vertical-align: middle;
     font-size: 25px;
-    display: inline-block;
+}
+
+.btn-subtract, .btn-plus {
+    width: 25%;
 }
 
 .btn-subtract {
     border: 1px solid red;
     color: red;
-    float: left;
+    margin-right: 5px;
 }
 
-.btn-subtract:hover {
+.btn-subtract:active {
     color:#ffffff;
     background-color: red;
 }
@@ -37,19 +50,24 @@
 .btn-plus {
     border: 1px solid green;
     color: green;
-    float: right;
+    height: 100%;
+    margin-left: 5px;
 }
 
-.btn-plus:hover {
+.btn-plus:active {
     color:#ffffff;
     background-color: green;
 }
 
+.box-quantity {
+    width: 75%;
+    border: 1px solid #e8e8e8;
+}
+
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 479px) {
-    .product-cart {
-        border: 1px solid #e8e8e8;
-        width: 150px;
+    .product-card {        
+        width: 48%;
     }
 }
 
