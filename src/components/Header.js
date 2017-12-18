@@ -6,7 +6,7 @@ export default class Header extends Component {
     render() {
         return (
             <header className="zx-header">
-                <div className="box-header">
+                <div className="box-header container">
                     <div className="box-header-logo">
                         <a href="#">
                             <img className="img-logo" src={zxLogo} alt="ZX Ventures" />
@@ -18,7 +18,9 @@ export default class Header extends Component {
                         </a>
                     </div>
                 </div>
-                <hr />
+                <div className="container">
+                    <hr />
+                </div>
             </header>
         );
     }

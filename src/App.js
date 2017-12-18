@@ -3,6 +3,7 @@ import './assets/css/reset.css'
 import './assets/css/main.css'
 import Header from './components/Header'
 import Products from './components/Products'
+import Footer from './components/Footer'
 
 export default class App extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class App extends Component {
       <div>
         <Header />
         <Products />
+        <Footer />
       </div>
     );
   }

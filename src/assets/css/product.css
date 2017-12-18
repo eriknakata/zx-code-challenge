@@ -6,6 +6,12 @@
     padding: 0px 5px 10px 5px;
     border: 1px solid #e8e8e8;
     box-sizing: border-box;
+    width: 48%;
+    border-radius: 10px;
+}
+
+.product-card img {
+    margin: 0 auto;
 }
 
 .product-title, .product-price {
@@ -23,13 +29,14 @@
     margin-top: auto;
 }
 
-.product-buttons div {
+.product-buttons button, .box-quantity {
     border-radius: 5px;
     height: 30px;
     line-height: 25px;
     text-align: center;
     vertical-align: middle;
     font-size: 25px;
+    background-color: #ffffff;
 }
 
 .btn-subtract, .btn-plus {
@@ -66,19 +73,18 @@
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (max-width : 479px) {
-    .product-card {        
-        width: 48%;
-    }
+    
 }
 
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
-    
+    .product-card {        
+        width: 22%;
+    }
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
-    
     
 }
 

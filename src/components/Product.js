@@ -1,7 +1,31 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../assets/css/product.css'
 
-export default class Product extends Component {
+class Product extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            quantity: props.quantity,
+        };
+
+        this.addProduct = this.addProduct.bind(this);
+        this.removeProduct = this.removeProduct.bind(this);
+    }
+
+    addProduct() {
+        this.setState(prevState => {
+            return { quantity: prevState.quantity + 1 };
+        })
+    }
+
+    removeProduct() {
+        this.setState(prevState => {
+            return { quantity: prevState.quantity === 0 ? 0 : prevState.quantity - 1 };
+        })
+    }
 
     render() {
         return (
@@ -10,17 +34,26 @@ export default class Product extends Component {
                 <span className="product-title">{this.props.productName}</span>
                 <span className="product-price">R$ {this.props.price}</span>
                 <div className="product-buttons">
-                    <div className="btn-subtract">
+                    <button className="btn-subtract" onClick={this.removeProduct}>
                         -
-                    </div>
+                    </button>
                     <div className="box-quantity">
-                        <span>{this.props.quantity}</span>
+                        <span>{this.state.quantity}</span>
                     </div>
-                    <div className="btn-plus">
+                    <button className="btn-plus" onClick={this.addProduct}>
                         +
-                    </div>
+                    </button>
                 </div>
             </div>
         );
     }
 }
+
+Product.propTypes = {
+    productName: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+ };
+
+export default Product
