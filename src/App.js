@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import './assets/css/reset.css'
-import './assets/css/main.css'
 import Header from './components/Header'
-import Products from './components/Products'
+import Main from './components/Main'
 import Footer from './components/Footer'
 
 export default class App extends Component {
@@ -10,7 +8,7 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <Products />
+        <Main />
         <Footer />
       </div>
     );
