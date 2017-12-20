@@ -10,7 +10,7 @@ export default class Home extends Component {
                     Preguiça de sair de casa? Bora pedir uma que o Zé te ajuda!
                 </div>
                 <div className="address">
-                    <GoogleMapsAutocomplete />
+                    <GoogleMapsAutocomplete history={this.props.history} />
                 </div>
             </section>
         );

@@ -8,7 +8,7 @@ class Product extends Component {
         super(props);
 
         this.state = {
-            quantity: props.quantity,
+            quantity: 0,
         };
 
         this.addProduct = this.addProduct.bind(this);
@@ -30,8 +30,8 @@ class Product extends Component {
     render() {
         return (
             <div className="product-card">
-                <img src={this.props.imageUrl} width="150" height="150" alt={this.props.productName} title={this.props.productName} />
-                <span className="product-title">{this.props.productName}</span>
+                <img src={this.props.imageUrl} alt={this.props.title} title={this.props.title} />
+                <span className="product-title">{this.props.title}</span>
                 <span className="product-price">R$ {this.props.price}</span>
                 <div className="product-buttons">
                     <button className="btn-subtract" onClick={this.removeProduct}>
@@ -50,10 +50,10 @@ class Product extends Component {
 }
 
 Product.propTypes = {
-    productName: PropTypes.string.isRequired,
-    quantity: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    quantity: PropTypes.number,
     imageUrl: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired
  };
 
 export default Product

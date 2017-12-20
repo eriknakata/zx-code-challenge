@@ -5,11 +5,6 @@ import zxLogo from '../assets/images/zx-ventures-logo.jpg'
 
 export default class Header extends Component {
 
-    constructor() {
-        super();
-        this.state = { itemsQuantity: 0 }
-    }
-
     render() {
         return (
             <header className="zx-header">
@@ -21,7 +16,7 @@ export default class Header extends Component {
                     </div>
                     <div className="box-cart">
                         <Link to="#">
-                            <span>Carrinho ({this.state.itemsQuantity})</span>
+                            <span>Carrinho</span>
                         </Link>
                     </div>
                 </div>
