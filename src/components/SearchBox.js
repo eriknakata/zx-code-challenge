@@ -9,7 +9,7 @@ export default class SearchBox extends Component {
 
     render() {
         return (
-            <input id="search-product" type="text" onKeyDown={this.searchProduct} placeholder="Digite o nome de um produto" />
+            <input id="search-product" type="search" onKeyDown={this.searchProduct} placeholder="Digite o nome de um produto" />
         );
     }
 }

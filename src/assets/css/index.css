@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     height: 100%;
 }
@@ -55,6 +59,12 @@ input, select {
 
 .error-message {
     color: red;
+}
+
+@media only screen and (min-width : 768px) {
+    .container {
+        padding: 20px 20px 0;
+    }
 }
 
 /* Medium Devices, Desktops */

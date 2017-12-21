@@ -6,12 +6,12 @@ import Home from './Home'
 export default class Main extends Component {
     render() {
         return (
-            <div className="content">
+            <main className="content" role="main">
                 <Switch>
                     <Route exact path='/' component={Home} />
                     <Route path='/products' component={Products} />
                 </Switch>
-            </div>
+            </main>
         );
     }
 }

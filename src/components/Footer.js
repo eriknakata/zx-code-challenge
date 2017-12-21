@@ -21,10 +21,12 @@ export default class Footer extends Component {
                     <div className="grid-item">
                         <h3>Novidades</h3>
                         <label className="news-description" htmlFor="newsLetter">Se inscreva e receba novidades ;)</label>
-                        <div className="box-submit">
-                            <input type="email" id="newsLetter" />
-                            <button type="submit">Enviar</button>
-                        </div>
+                        <form onSubmit={e => e.preventDefault()}>
+                            <div className="box-submit">
+                                <input type="email" id="newsLetter" />
+                                <button type="submit">Enviar</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
                 <hr />
