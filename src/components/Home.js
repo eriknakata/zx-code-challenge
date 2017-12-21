@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../assets/css/home.css';
 import GoogleMapsAutocomplete from './GoogleMapsAutocomplete'
 
 export default class Home extends Component {

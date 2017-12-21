@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class SearchBox extends Component {
 
-    searchProduct = (e) => {
+    searchProduct = e => {
         if (e.key === "Enter")
             this.props.onKeyDown(e.target.value);
     }

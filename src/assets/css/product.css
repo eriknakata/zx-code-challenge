@@ -10,6 +10,10 @@
     border-radius: 10px;
 }
 
+.product-card:nth-child(odd) {
+    margin-right: 4%;
+}
+
 .product-card img {
     margin: 0 auto;
     width: 145px;

@@ -3,7 +3,9 @@ html {
 }
 
 body {
-    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 body, input, textarea, button, select, span {
@@ -22,7 +24,7 @@ h1, h2, h3, h4, h5, h6, {
     color: #333
 }
 
-h3,.h3 {
+h3 {
     font-size: 1.26667em
 }
 
@@ -41,6 +43,14 @@ input, select {
     background-color: #f4f4f4;
     border: 0;
     padding: 8px
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+.container {
+    padding: 15px 15px 0 15px;
 }
 
 .error-message {

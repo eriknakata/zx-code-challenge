@@ -45,12 +45,11 @@ export default class Products extends Component {
     }
 
     categorySelected = (categoryId) => {
-        console.log("nova categoria " + categoryId)
-        this.setState({ categoryId: categoryId }, this.getProducts())
+        this.setState({ categoryId: categoryId }, this.getProducts)
     }
 
     searchStringInserted = (search) => {
-        this.setState({ search: search }, this.getProducts())
+        this.setState({ search: search }, this.getProducts)
 
     }
 
@@ -67,16 +66,19 @@ export default class Products extends Component {
                 </div>
 
                 <div className="products-container">
-                    {this.state.products.map((product, index) => {
-                        return <Product {...product} key={index} />
-                    })}
+                    {
+                        this.state.products.length === 0
+                            ? <p>Nenhum produto encontrado!</p>
+                            :
+                            this.state.products.map((product, index) => {
+                                return <Product {...product} key={index} />
+                            })}
                 </div>
             </div>
         );
     }
 
     componentDidMount() {
-        console.log(123)
         this.getProducts()
     }
 }
