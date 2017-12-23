@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../styles/product.css'
+import '../../styles/product.css'
 
 class Product extends Component {
 
@@ -10,18 +10,15 @@ class Product extends Component {
         this.state = {
             quantity: 0,
         };
-
-        this.addProduct = this.addProduct.bind(this);
-        this.removeProduct = this.removeProduct.bind(this);
     }
 
-    addProduct() {
+    addProduct = () => {
         this.setState(prevState => {
             return { quantity: prevState.quantity + 1 };
         })
     }
 
-    removeProduct() {
+    removeProduct = () => {
         this.setState(prevState => {
             return { quantity: prevState.quantity === 0 ? 0 : prevState.quantity - 1 };
         })

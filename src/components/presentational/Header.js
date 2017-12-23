@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import '../styles/header.css'
-import zxLogo from '../images/zx-ventures-logo.jpg'
+import '../../styles/header.css'
+import zxLogo from '../../images/zx-ventures-logo.jpg'
 
 export default () => (
     <header className="zx-header">
