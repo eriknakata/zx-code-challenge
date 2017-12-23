@@ -7,16 +7,15 @@ configure({ adapter: new Adapter() });
 
 describe('SearchBox component testing', function () {
 
-    it('should call the parameter function when press enter', () => {
+    it('should call the parameter function', () => {
 
         const mockCallback = jest.fn();
 
         const wrapper = mount(<SearchBox onKeyDown={mockCallback} />);
         const input = wrapper.find('input');
-        const searchString = 'skol'
-        input.value = searchString;
-
-        input.simulate('keyDown', { key: 'Enter' })
+        const text = "skol";
+        input.value = text
+        input.simulate('keydown', { key: 'Enter', keyCode: 13, which: 13 })
 
         expect(mockCallback.mock.calls.length).toBe(1);
     });

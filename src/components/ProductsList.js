@@ -47,8 +47,9 @@ export default class ProductsList extends Component {
         this.setState({ categoryId: categoryId }, this.getProducts)
     }
 
-    searchStringInserted = (search) => {
-        this.setState({ search: search }, this.getProducts)
+    searchStringInserted = (e) => {
+        if (e.key === "Enter")
+            this.setState({ search: e.target.value }, this.getProducts)
 
     }
 

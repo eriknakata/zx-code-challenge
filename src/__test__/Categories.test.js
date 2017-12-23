@@ -11,13 +11,16 @@ describe('Categories component testing', function () {
 
         const mockCallback = jest.fn();
 
-        const wrapper = mount(<Categories onChange={mockCallback} />);
-        // const input = wrapper.find('input');
-        // const searchString = 'skol'
-        // input.value = searchString;
+        const categories = [
+            { id: 1, title: "Cervejas importadas" },
+            { id: 2, title: "Refrigerantes" }
+        ];
 
-        // input.simulate('keyDown', { key: 'Enter' })
+        const wrapper = mount(<Categories onChange={mockCallback} categories={categories} />);
+        const select = wrapper.find('select');
 
-        // expect(mockCallback.mock.calls.length).toBe(1);
+        select.simulate('change', { target: { value: '1' } })
+
+        expect(mockCallback.mock.calls.length).toBe(1);
     });
 });

@@ -1,15 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class SearchBox extends Component {
-
-    searchProduct = e => {
-        if (e.key === "Enter")
-            this.props.onKeyDown(e.target.value);
-    }
-
-    render() {
-        return (
-            <input id="search-product" type="search" onKeyDown={this.searchProduct} placeholder="Digite o nome de um produto" />
-        );
-    }
+export default (props) => {
+    return (
+        <input id="search-product" type="search" onKeyDown={props.onKeyDown} placeholder="Digite o nome de um produto" />
+    );
 }
