@@ -1,8 +1,7 @@
 import React from 'react'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-import '../assets/css/google-maps.css'
+import '../styles/google-maps.css'
 import { createApolloFetch } from 'apollo-fetch';
-
 
 class GoogleMapsAutocomplete extends React.Component {
     constructor(props) {
@@ -64,11 +63,9 @@ class GoogleMapsAutocomplete extends React.Component {
 
         return (
             <form onSubmit={this.handleFormSubmit}>
-                <div className="box-submit">
-                    <PlacesAutocomplete inputProps={inputProps} options={options} />
-                    <button className="btn-pedir" type="submit">Fazer pedido</button>
-                </div>
-                <span style={{display: this.state.pocInvalid ? 'block' : 'none' }} className="error-message">Ops! Não encontramos nenhum fornecedor disponível no endereço informado </span>
+                <PlacesAutocomplete inputProps={inputProps} options={options} />
+                <button className="btn-pedir" type="submit">Fazer pedido</button>
+                <span style={{ display: this.state.pocInvalid ? 'block' : 'none' }} className="error-message">Ops! Não encontramos nenhum fornecedor disponível no endereço informado </span>
             </form>
         )
     }

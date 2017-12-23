@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Product from './Product'
 import Categories from './Categories'
-import '../assets/css/products.css'
+import '../styles/products.css'
 import { createApolloFetch } from 'apollo-fetch';
 import SearchBox from './SearchBox'
 
-export default class Products extends Component {
+export default class ProductsList extends Component {
 
     constructor() {
         super();
@@ -13,7 +13,6 @@ export default class Products extends Component {
     }
 
     getProducts = () => {
-        console.log(this.state.categoryId)
         this.fetchData()
             .then(({ data }) => data.poc.products.map(product => product.productVariants[0]))
             .then(products => this.setState({ products: products }))

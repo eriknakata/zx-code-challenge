@@ -18,10 +18,13 @@
     
 }
 
-.box-cart {
-    background-image: url(../images/icon-cart.png);
-    background-repeat: no-repeat;
-    padding-left: 28px;
+.box-basket svg {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+    top: -2px
 }
 
 /* Small Devices, Tablets */

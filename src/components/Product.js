@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../assets/css/product.css'
+import '../styles/product.css'
 
 class Product extends Component {
 

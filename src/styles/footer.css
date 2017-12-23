@@ -54,30 +54,9 @@
 }
 
 .icon-payment {
-    width: 32px;
     height: 20px;
     margin-right: 10px;
     background-repeat: no-repeat;
-}
-
-.icon-mastercard {
-    background-image: url(../images/icon-mastercard.png);
-}
-
-.icon-visa {
-    background-image: url(../images/icon-visa.png);
-}
-
-.icon-amex {
-    background-image: url(../images/icon-amex.png);
-}
-
-.icon-paypal {
-    background-image: url(../images/icon-paypal.png);
-}
-
-.icon-bitcoin {
-    background-image: url(../images/icon-bitcoin.png);
 }
 
 @media only screen and (min-width : 768px) {
