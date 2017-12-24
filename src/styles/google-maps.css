@@ -1,6 +1,22 @@
-.btn-pedir:active {
-    background-color: white;
-    color: #4DBA7A;
+.autocomplete-container {
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.btn-pedir {
+    margin: 15px 0;
+    padding: 7px 15px;
+    background-color: transparent;
+    color: #333;
+    border: 2px solid #333;
+    text-transform: uppercase;
+    width: 100%;
+}
+.btn-pedir:hover {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #333
 }
 
 .box-submit {

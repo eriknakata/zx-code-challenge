@@ -33,7 +33,9 @@
 
 .box-submit input {
     border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 0;
 	padding: 10px;
 }
 

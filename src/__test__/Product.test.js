@@ -1,27 +1,42 @@
 import React from 'react';
 import { shallow, mount, render, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'
-import Product from '../components/Product';
+import Product from '../components/presentational/Product';
 
 configure({ adapter: new Adapter() });
 
 describe('Product card testing', function () {
 
-  const wrapper = shallow(<Product productName="Budweiser 350ml - Unidade" price="3,49" quantity="0" />);
+  test('Shoul call the function when the product is added', () => {
 
-  it('Test rendering', () => {
-    expect(wrapper.find('.product-price').at(0).text()).toBe('R$ 3,49');
-    expect(wrapper.find('.product-title').at(0).text()).toBe('Budweiser 350ml - Unidade');
+    const mockProductAdded = jest.fn();
+    const mockProductRemoved = jest.fn();
+
+    const wrapper = mount(<Product title="Budweiser 350ml - Unidade"
+      price={3.49} quantity={0} imageUrl="#"
+      productAdded={mockProductAdded} productRemoved={mockProductRemoved} />);
+
+    const button = wrapper.find('button.btn-plus');
+
+    button.simulate('click')
+
+    expect(mockProductAdded.mock.calls.length).toBe(1);
   });
 
-  it('should add a product and increment the quantity', function() {
-    wrapper.find('.btn-plus').simulate('click');
-    expect(wrapper.find('.product-quantity span').at(0).text()).toBe(1);
-  });
+  test('Shoul call the function when the product is removed', () => {
 
-  it('should keep the quantity 0', function() {
-    wrapper.find('.btn-subtract').simulate('click');
-    expect(wrapper.find('.product-quantity span').at(0).text()).toBe(0);
+    const mockProductAdded = jest.fn();
+    const mockProductRemoved = jest.fn();
+
+    const wrapper = mount(<Product title="Budweiser 350ml - Unidade"
+      price={3.49} quantity={0} imageUrl="#"
+      productAdded={mockProductAdded} productRemoved={mockProductRemoved} />);
+
+    const button = wrapper.find('button.btn-subtract');
+
+    button.simulate('click')
+
+    expect(mockProductRemoved.mock.calls.length).toBe(1);
   });
 
 });

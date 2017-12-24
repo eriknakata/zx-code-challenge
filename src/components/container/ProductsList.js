@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Product from './Product'
+import Product from './ProductContainer'
 import CategoryList from '../container/CategoryList'
 import '../../styles/products.css'
 import { getProducts } from '../../api/product-api';

@@ -21,12 +21,23 @@
 }
 
 @media only screen and (min-width : 768px) {
-    .filter {
+    .filters {
         flex-direction: row;
         justify-content: space-between;
     }
 
     #category {
         width: auto;
+        height: 40px;
+    }
+
+    .search-box-filter {
+        width: 35%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .search-box-filter {
+        width: 20%;
     }
 }

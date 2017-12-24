@@ -20,7 +20,7 @@ export default () => (
                 <label className="news-description" htmlFor="newsLetter">Se inscreva e receba novidades ;)</label>
                 <form onSubmit={e => e.preventDefault()}>
                     <div className="box-submit">
-                        <input type="email" id="newsLetter" />
+                        <input placeholder="Digite seu email" type="email" id="newsLetter" />
                         <button type="submit">Enviar</button>
                     </div>
                 </form>
