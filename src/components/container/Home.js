@@ -3,6 +3,7 @@ import '../styles/home.css'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
 import '../styles/google-maps.css'
 import { getPoc } from '../api/poc-api';
+import cervejas from '../images/Cervezas.jpg'
 
 export default class Home extends Component {
     constructor(props) {
@@ -22,8 +23,7 @@ export default class Home extends Component {
     }
 
     handleResult = (pocs) => {
-        if (pocs.length > 0) {
-            //if (pocs.some(poc => poc.status === "AVAILABLE")) {
+        if (pocs.some(poc => poc.status === "AVAILABLE")) {
             localStorage.setItem("pocId", pocs[0].id)
             this.props.history.push("/products")
         }
@@ -50,13 +50,22 @@ export default class Home extends Component {
 
         return (
             <section className="container">
-                <div className="description">Preguiça de sair de casa? Bora pedir uma que o Zé te ajuda!</div>
-                <div className="address">
-                    <form onSubmit={this.handleFormSubmit}>
-                        <PlacesAutocomplete classNames={cssClasses} inputProps={inputProps} options={options} />
-                        <button className="btn-pedir" type="submit">Fazer pedido</button>
-                        <span style={{ display: this.state.pocInvalid ? 'block' : 'none' }} className="error-message">Ops! Não encontramos nenhum fornecedor disponível no endereço informado </span>
-                    </form>
+                <div className="address-info">
+                    <div className="title">Preguiça de sair de casa? Bora pedir uma que o Zé te ajuda!</div>
+                    <div className="description">Chegamos rapidinho na sua casa e podemos matar sua fome tbm! :)</div>
+                    <div className="address">
+                        <form onSubmit={this.handleFormSubmit}>
+                            <div className="control-label" >
+                                <label htmlFor="PlacesAutocomplete__root">Seu endereço</label>
+                            </div>
+                            <PlacesAutocomplete classNames={cssClasses} inputProps={inputProps} options={options} />
+                            <button className="btn-pedir" type="submit">Fazer pedido</button>
+                            <span style={{ display: this.state.pocInvalid ? 'block' : 'none' }} className="error-message">Ops! Não encontramos nenhum fornecedor disponível no endereço informado </span>
+                        </form>
+                    </div>
+                </div>
+                <div id="pic">
+                    <img src={cervejas} alt="Cervejas" />
                 </div>
             </section>
         );

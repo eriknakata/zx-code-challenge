@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
 import ProductsList from '../container/ProductsList'
-import Home from '../Home'
+import Home from '../container/Home'
 
 export default () => {
     return (
