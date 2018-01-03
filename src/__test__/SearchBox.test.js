@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount, render, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'
-import SearchBox from '../components/SearchBox'
+import SearchBox from '../components/presentational/SearchBox'
 
 configure({ adapter: new Adapter() });
 

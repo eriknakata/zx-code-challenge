@@ -4,17 +4,29 @@ import CategoryList from '../container/CategoryList'
 import '../../styles/products.css'
 import { getProducts } from '../../api/product-api';
 import SearchBox from '../container/SearchBoxEnter'
+import Loading from '../presentational/Loading'
 
 export default class ProductsList extends Component {
 
     constructor() {
         super();
-        this.state = { products: [], categoryId: 0, search: '' }
+        this.state = { products: [], categoryId: 0, search: '', loading: false }
     }
 
     fetchProducts() {
+        this.setState({ loading: true })
         getProducts(localStorage.getItem("pocId"), this.state.search, this.state.categoryId)
-            .then(products => this.setState({ products: products }))
+            .then(this.handleResponse)
+            .catch(this.handleError)
+    }
+
+    handleResponse = (products) => {
+        this.setState({ loading: false })
+        this.setState({ products: products })
+    }
+
+    handleError = () => {
+        this.setState({ loading: false })
     }
 
     render() {
@@ -39,6 +51,7 @@ export default class ProductsList extends Component {
                             })
                     }
                 </div>
+                {this.state.loading ? <Loading /> : ""}
             </div>
         );
     }

@@ -7,17 +7,22 @@ const query = `query pocSearchMethod($now: DateTime!, $algorithm: String!, $lat:
     }
   }`
 
+const handleResponse = response => {
+    if (response.errors)
+        return Promise.reject(response.errors.join())
+
+    return response.data.pocSearch;
+}
+
 const getPoc = (lat, lng) => {
-    return zxFetch()({
+    return zxFetch({
         query, variables: {
             now: new Date(),
             algorithm: "NEAREST",
             lat: lat,
             long: lng
         }
-    })
-        .then(({ data }) => data.pocSearch)
-        .catch(error => new Error(error))
+    }).then(handleResponse)
 }
 
 export { getPoc };

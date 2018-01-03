@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount, render, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16'
-import Categories from '../components/Categories'
+import Categories from '../components/presentational/Categories'
 
 configure({ adapter: new Adapter() });
 

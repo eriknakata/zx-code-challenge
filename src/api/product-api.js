@@ -14,7 +14,7 @@ const query = `query pocCategorySearch($id: ID!, $search: String!, $categoryId: 
 }`
 
 const getProducts = (pocId, productTitle, categoryId) => {
-    return zxFetch()({
+    return zxFetch({
         query, variables: {
             id: pocId,
             search: productTitle,

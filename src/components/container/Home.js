@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
-import '../styles/home.css'
+import '../../styles/home.css'
 import PlacesAutocomplete, { geocodeByAddress, getLatLng } from 'react-places-autocomplete'
-import '../styles/google-maps.css'
-import { getPoc } from '../api/poc-api';
-import cervejas from '../images/Cervezas.jpg'
+import '../../styles/google-maps.css'
+import { getPoc } from '../../api/poc-api';
+import cervejas from '../../images/Cervezas.jpg'
+import Loading from '../presentational/Loading'
 
 export default class Home extends Component {
     constructor(props) {
         super(props)
-        this.state = { address: '', pocInvalid: false, history: {} }
-        this.onChange = address => this.setState({ address })
+        this.state = {
+            address: '',
+            pocInvalid: false,
+            history: {},
+            hasError: false,
+            loading: false
+        }
     }
+
+    onChange = address => this.setState({ address })
 
     handleFormSubmit = (event) => {
         event.preventDefault()
+        this.setState({ loading: true })
 
         geocodeByAddress(this.state.address)
             .then(results => getLatLng(results[0]))
             .then(result => getPoc(result.lat, result.lng))
             .then(this.handleResult)
-            .catch(error => console.error('Error', error))
+            .catch(this.handleError)
+    }
+
+    handleError = () => {
+        this.setState({ hasError: true })
+        this.setState({ loading: false })
     }
 
     handleResult = (pocs) => {
@@ -28,6 +42,7 @@ export default class Home extends Component {
             this.props.history.push("/products")
         }
         else {
+            this.setState({ loading: false })
             this.setState({ pocInvalid: true })
         }
     }
@@ -48,6 +63,8 @@ export default class Home extends Component {
 
         }
 
+        let loading = this.state.loading ? <Loading /> : ""
+
         return (
             <section className="container">
                 <div className="address-info">
@@ -61,12 +78,14 @@ export default class Home extends Component {
                             <PlacesAutocomplete classNames={cssClasses} inputProps={inputProps} options={options} />
                             <button className="btn-pedir" type="submit">Fazer pedido</button>
                             <span style={{ display: this.state.pocInvalid ? 'block' : 'none' }} className="error-message">Ops! Não encontramos nenhum fornecedor disponível no endereço informado </span>
+                            <span style={{ display: this.state.hasError ? 'block' : 'none' }} className="error-message">Ops! Erro encontrado! Tente novamente </span>
                         </form>
                     </div>
                 </div>
                 <div id="pic">
                     <img src={cervejas} alt="Cervejas" />
                 </div>
+                {loading}
             </section>
         );
     }

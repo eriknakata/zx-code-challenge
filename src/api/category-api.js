@@ -9,7 +9,7 @@ const query =
 }`
 
 const getCategories = () => {
-    return zxFetch()({ query })
+    return zxFetch({ query })
         .then(({ data }) => data.allCategory)
         .catch(error => error)
 }
